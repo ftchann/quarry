@@ -1,7 +1,6 @@
 -- ********************************************************************************** --
--- **   pastebin get Z7fC0VWm quarry                                               ** --
+-- **   pastebin get efB88bVN quarry                                               ** --
 -- **   Minecraft Mining Turtle Ore Quarry v0.71 by AustinKK                       ** --
--- **   Updated by Yann
 -- **   ----------------------------------------------------                       ** --
 -- **                                                                              ** --
 -- **   For instructions on how to use:                                            ** --
@@ -42,10 +41,13 @@ miningState = { START=0, LAYER=1, EMPTYCHESTDOWN=2, EMPTYINVENTORY=3 }
 
 local messageOutputLevel = messageLevel.INFO
 local messageOutputFileName
+local fuelLevelToRefuelAt = 5
+local refuelItemsToUseWhenRefuelling = 63
+local emergencyFuelToRetain = 0
 local maximumGravelStackSupported = 25 -- The number of stacked gravel or sand blocks supported
 local noiseBlocksCount
 local returningToStart = false
-local lookForChests = true -- Determines if chests should be located as part of the quarrying
+local lookForChests = false -- Determines if chests should be located as part of the quarrying
 local miningOffset -- The offset to the mining layer. This is set depending on whether chests are being looked for or not
 local lastEmptySlot -- The last inventory slot that was empty when the program started (is either 15 if not looking for chests or 14 if we are)
 local turtleId
@@ -316,13 +318,17 @@ function returnToStartAndUnload(returnBackToMiningPoint)
 
         -- Loop over each of the slots (except the 16th one which stores fuel)
         while (slotLoop <= 16) do
+            -- If this is one of the slots that contains a noise block, empty all blocks except
+            -- one
+            turtle.select(slotLoop) -- Don't bother updating selected slot variable as it will set later in this function
             -- Not a noise block, drop all of the items in this slot
-            writeMessage("Dropping (all) from slot " .. slotLoop .. " [" .. turtle.getItemCount(slotLoop) .. "]", messageLevel.DEBUG)
+            writeMessage("Dropping (all) from slot "..slotLoop.." ["..turtle.getItemCount(slotLoop).."]", messageLevel.DEBUG)
             if (turtle.getItemCount(slotLoop) > 0) then
                 turtle.drop()
             end
             slotLoop = slotLoop + 1
         end
+        
 
         -- Select the 1st slot because sometimes when leaving the 15th or 16th slots selected it can result
         -- in that slot being immediately filled (resulting in the turtle returning to base again too soon)
@@ -1077,6 +1083,38 @@ function isChestBlock(inspectFn)
 
 end
 
+-- ********************************************************************************** --
+-- Function to calculate the number of non seam blocks in the turtle's inventory. This
+-- is all of the blocks at the start of the inventory (before the first empty slot is
+-- found
+-- ********************************************************************************** --
+function determineNoiseBlocksCountCount()
+    -- Determine the location of the first empty inventory slot. All items before this represent
+    -- noise items.
+    local foundFirstBlankInventorySlot = false
+    noiseBlocksCount = 1
+    while ((noiseBlocksCount < 16) and (foundFirstBlankInventorySlot == false)) do
+        if (turtle.getItemCount(noiseBlocksCount) > 0) then
+            noiseBlocksCount = noiseBlocksCount + 1
+        else
+            foundFirstBlankInventorySlot = true
+        end
+    end
+    noiseBlocksCount = noiseBlocksCount - 1
+
+    -- Determine whether a chest was provided, and hence whether we should support
+    -- looking for chests
+    if (turtle.getItemCount(15) > 0) then
+        lookForChests = true
+        lastEmptySlot = 14
+        miningOffset = 0
+        writeMessage("Looking for chests...", messageLevel.DEBUG)
+    else
+        lastEmptySlot = 15
+        miningOffset = 1
+        writeMessage("Ignoring chests...", messageLevel.DEBUG)
+    end
+end
 
 -- ********************************************************************************** --
 -- Creates a quarry mining out only ores and leaving behind any noise blocks
@@ -1580,6 +1618,10 @@ if (paramsOK == true) then
     currZ = 0
     currOrient = direction.FORWARD
 
+    -- Calculate which blocks in the inventory signify noise blocks
+    if (resuming == false) then
+        determineNoiseBlocksCountCount()
+    end
 
     if (false) then
         writeMessage("No noise blocks have been been added. Please place blocks that the turtle should not mine (e.g. Stone, Dirt, Gravel etc.) in the first few slots of the turtle\'s inventory. The first empty slot signifies the end of the noise blocks.", messageLevel.FATAL)

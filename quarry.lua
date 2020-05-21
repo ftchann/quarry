@@ -320,15 +320,11 @@ function returnToStartAndUnload(returnBackToMiningPoint)
         while (slotLoop <= 16) do
             -- If this is one of the slots that contains a noise block, empty all blocks except
             -- one
-            turtle.select(slotLoop) -- Don't bother updating selected slot variable as it will set later in this function
-            -- Not a noise block, drop all of the items in this slot
-            writeMessage("Dropping (all) from slot "..slotLoop.." ["..turtle.getItemCount(slotLoop).."]", messageLevel.DEBUG)
             if (turtle.getItemCount(slotLoop) > 0) then
                 turtle.drop()
             end
             slotLoop = slotLoop + 1
         end
-        
 
         -- Select the 1st slot because sometimes when leaving the 15th or 16th slots selected it can result
         -- in that slot being immediately filled (resulting in the turtle returning to base again too soon)
@@ -1091,29 +1087,14 @@ end
 function determineNoiseBlocksCountCount()
     -- Determine the location of the first empty inventory slot. All items before this represent
     -- noise items.
-    local foundFirstBlankInventorySlot = false
     noiseBlocksCount = 1
-    while ((noiseBlocksCount < 16) and (foundFirstBlankInventorySlot == false)) do
-        if (turtle.getItemCount(noiseBlocksCount) > 0) then
-            noiseBlocksCount = noiseBlocksCount + 1
-        else
-            foundFirstBlankInventorySlot = true
-        end
-    end
-    noiseBlocksCount = noiseBlocksCount - 1
 
     -- Determine whether a chest was provided, and hence whether we should support
     -- looking for chests
-    if (turtle.getItemCount(15) > 0) then
-        lookForChests = true
-        lastEmptySlot = 14
-        miningOffset = 0
-        writeMessage("Looking for chests...", messageLevel.DEBUG)
-    else
-        lastEmptySlot = 15
-        miningOffset = 1
-        writeMessage("Ignoring chests...", messageLevel.DEBUG)
-    end
+    lookForChests = true
+    lastEmptySlot = 16
+    miningOffset = 0
+    writeMessage("Looking for chests...", messageLevel.DEBUG)
 end
 
 -- ********************************************************************************** --
@@ -1453,13 +1434,9 @@ function isResume()
             writeMessage("Read params", messageLevel.DEBUG)
 
             -- Determine the look for chest and mining offset
-            if (lastEmptySlot == 14) then
-                lookForChests = true
-                miningOffset = 0
-            else
-                lookForChests = false
-                miningOffset = 1
-            end
+            lookForChests = true
+            miningOffset = 0
+
 
             -- Get the turtle resume location
             resumeFile = fs.open(oreQuarryLocation, "r")

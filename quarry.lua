@@ -707,7 +707,7 @@ function turtleForward()
         writeMessage ("Invalid currOrient in turtleForward function", messageLevel.ERROR)
     end
 
-    local returnVal = moveTurtle(turtle.forward, turtle.detect, turtle.dig, turtle.attack, turtle.inspectFn, turtle.suck, maximumGravelStackSupported, newX, currY, newZ)
+    local returnVal = moveTurtle(turtle.forward, turtle.detect, turtle.dig, turtle.attack, turtle.inspect, turtle.suck, maximumGravelStackSupported, newX, currY, newZ)
 
     if (returnVal == true) then
         -- Check that there is sufficient inventory space as may have picked up a block
@@ -722,7 +722,7 @@ end
 -- ********************************************************************************** --
 function turtleUp()
 
-    local returnVal = moveTurtle(turtle.up, turtle.detectUp, turtle.digUp, turtle.attackUp, turtle.inspectFn, turtle.suckUp, maximumGravelStackSupported, currX, currY + 1, currZ)
+    local returnVal = moveTurtle(turtle.up, turtle.detectUp, turtle.digUp, turtle.attackUp, turtle.inspect, turtle.suckUp, maximumGravelStackSupported, currX, currY + 1, currZ)
 
     if (returnVal == true) then
         -- Check that there is sufficient inventory space as may have picked up a block
@@ -1093,7 +1093,7 @@ function determineNoiseBlocksCountCount()
     -- looking for chests
     lookForChests = true
     lastEmptySlot = 16
-    miningOffset = 0
+    miningOffset = 1
     writeMessage("Looking for chests...", messageLevel.DEBUG)
 end
 

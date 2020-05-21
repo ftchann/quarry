@@ -1,5 +1,5 @@
 -- ********************************************************************************** --
--- **   pastebin get efB88bVN quarry                                               ** --
+-- **   pastebin get xsRehr5r quarry                                               ** --
 -- **   Minecraft Mining Turtle Ore Quarry v0.71 by AustinKK                       ** --
 -- **   ----------------------------------------------------                       ** --
 -- **                                                                              ** --

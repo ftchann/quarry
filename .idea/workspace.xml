@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c4a4cc0-8723-41c9-abd0-5509bd431d0d" name="Default Changelist" comment="" />
+    <list default="true" id="7c4a4cc0-8723-41c9-abd0-5509bd431d0d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quarry.lua" beforeDir="false" afterPath="$PROJECT_DIR$/quarry.lua" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +54,7 @@
       <workItem from="1590082095048" duration="44000" />
       <workItem from="1590082145247" duration="73000" />
       <workItem from="1590082223584" duration="34000" />
-      <workItem from="1590082264125" duration="9540000" />
+      <workItem from="1590082264125" duration="9575000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1590088093843</created>
@@ -74,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590091689541</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init">
+      <created>1590091836359</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590091836359</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,10 +106,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="784" y="426" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590086715333" />
-    <state x="649" y="125" key="CommitChangelistDialog2" timestamp="1590091689239">
+    <state x="649" y="125" key="CommitChangelistDialog2" timestamp="1590091836070">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="649" y="125" key="CommitChangelistDialog2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590091689239" />
+    <state x="649" y="125" key="CommitChangelistDialog2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590091836070" />
     <state x="903" y="454" key="Github.ShareDialog" timestamp="1590087875660">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

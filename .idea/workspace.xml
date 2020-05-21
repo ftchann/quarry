@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c4a4cc0-8723-41c9-abd0-5509bd431d0d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cE6pXOpdw5ye0aJIOZkV9XmbD3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c4a4cc0-8723-41c9-abd0-5509bd431d0d" name="Default Changelist" comment="" />
+      <created>1590081589101</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590081589101</updated>
+      <workItem from="1590081591195" duration="160000" />
+      <workItem from="1590081758301" duration="92000" />
+      <workItem from="1590081857676" duration="27000" />
+      <workItem from="1590081892187" duration="28000" />
+      <workItem from="1590082054237" duration="34000" />
+      <workItem from="1590082095048" duration="44000" />
+      <workItem from="1590082145247" duration="73000" />
+      <workItem from="1590082223584" duration="34000" />
+      <workItem from="1590082264125" duration="9540000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1590088093843</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590088093843</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1590089075701</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590089075701</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <created>1590091689541</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590091689541</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.lua" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="130" key="#Project_Structure" timestamp="1590081596434">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="505" y="130" key="#Project_Structure/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590081596434" />
+    <state x="784" y="426" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590086715333">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="784" y="426" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590086715333" />
+    <state x="649" y="125" key="CommitChangelistDialog2" timestamp="1590091689239">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="649" y="125" key="CommitChangelistDialog2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590091689239" />
+    <state x="903" y="454" key="Github.ShareDialog" timestamp="1590087875660">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="903" y="454" key="Github.ShareDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590087875660" />
+    <state x="605" y="299" key="IDE.errors.dialog" timestamp="1590082075999">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="605" y="299" key="IDE.errors.dialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590082075999" />
+    <state x="533" y="201" key="SettingsEditor" timestamp="1590082255493">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="533" y="201" key="SettingsEditor/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590082255493" />
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1590089080834">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590089080834" />
+    <state x="826" y="463" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1590088026030">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="826" y="463" key="git4idea.remote.GitConfigureRemotesDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590088026030" />
+  </component>
+</project>

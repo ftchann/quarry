@@ -41,9 +41,6 @@ miningState = { START=0, LAYER=1, EMPTYCHESTDOWN=2, EMPTYINVENTORY=3 }
 
 local messageOutputLevel = messageLevel.INFO
 local messageOutputFileName
-local fuelLevelToRefuelAt = 5
-local refuelItemsToUseWhenRefuelling = 63
-local emergencyFuelToRetain = 0
 local maximumGravelStackSupported = 25 -- The number of stacked gravel or sand blocks supported
 local noiseBlocksCount
 local returningToStart = false
@@ -128,8 +125,11 @@ function ensureFuel()
     -- Determine whether a refuel is required
     local fuelLevel = turtle.getFuelLevel()
     if (fuelLevel ~= "unlimited") then
-        if (fuelLevel == 0) then
-            writeMessage("Completely out of fuel!", messageLevel.FATAL)
+        if (fuelLevel <= 1000) then
+            writeMessage("Completely out of fuel! Returning to start", messageLevel.DEBUG)
+            returnToStartAndUnload(false);
+            -- Face forward
+            turtleSetOrientation(direction.FORWARD)
         end
     end
 end

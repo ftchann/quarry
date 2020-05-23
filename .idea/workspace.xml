@@ -56,6 +56,8 @@
       <workItem from="1590082223584" duration="34000" />
       <workItem from="1590082264125" duration="10995000" />
       <workItem from="1590130237720" duration="477000" />
+      <workItem from="1590149334202" duration="2476000" />
+      <workItem from="1590252255743" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1590088093843</created>
@@ -92,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590091855882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="init">
+      <created>1590149347878</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590149347878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,10 +123,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="784" y="426" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590086715333" />
-    <state x="649" y="125" key="CommitChangelistDialog2" timestamp="1590091855576">
+    <state x="649" y="125" key="CommitChangelistDialog2" timestamp="1590149347472">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="649" y="125" key="CommitChangelistDialog2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590091855576" />
+    <state x="649" y="125" key="CommitChangelistDialog2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590149347472" />
     <state x="903" y="454" key="Github.ShareDialog" timestamp="1590087875660">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -130,10 +139,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="533" y="201" key="SettingsEditor/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590082255493" />
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1590092209774">
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1590149352328">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590092209774" />
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1590149352328" />
     <state x="826" y="463" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1590088026030">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

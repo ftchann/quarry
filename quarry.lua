@@ -1,5 +1,5 @@
 -- ********************************************************************************** --
--- **   pastebin get xsRehr5r quarry                                               ** --
+-- **   pastebin get efB88bVN quarry                                               ** --
 -- **   Minecraft Mining Turtle Ore Quarry v0.71 by AustinKK                       ** --
 -- **   ----------------------------------------------------                       ** --
 -- **                                                                              ** --
@@ -54,6 +54,7 @@ local lastMoveNeededDig = true -- Determines whether the last move needed a dig 
 local haveBeenAtZeroZeroOnLayer -- Determines whether the turtle has been at (0, 0) in this mining layer
 local orientationAtZeroZero -- The turtle's orientation when it was at (0, 0)
 local levelToReturnTo -- The level that the turtle should return to in order to head back to the start to unload
+local outofFuel = false
 
 -- Variables used to support a resume
 local startupParamsFile = "OreQuarryParams.txt"
@@ -127,9 +128,11 @@ function ensureFuel()
     if (fuelLevel ~= "unlimited") then
         if (fuelLevel <= 1000) then
             writeMessage("Completely out of fuel! Returning to start", messageLevel.DEBUG)
+            outofFuel = true;
             returnToStartAndUnload(false);
             -- Face forward
             turtleSetOrientation(direction.FORWARD)
+            outofFuel = false;
         end
     end
 end
@@ -311,6 +314,7 @@ function returnToStartAndUnload(returnBackToMiningPoint)
         end
 
         -- Empty the inventory
+
         local slotLoop = 1
 
         -- Face the chest
@@ -318,6 +322,7 @@ function returnToStartAndUnload(returnBackToMiningPoint)
 
         -- Loop over each of the slots (except the 16th one which stores fuel)
         while (slotLoop <= 16) do
+            turtle.select(slotLoop)
             -- If this is one of the slots that contains a noise block, empty all blocks except
             -- one
             if (turtle.getItemCount(slotLoop) > 0) then
@@ -548,7 +553,9 @@ function moveTurtle(moveFn, detectFn, digFn, attackFn, inspectFn, suckFn, maxDig
         prevY = currY
         prevZ = currZ
 
-        ensureFuel()
+        if(outofFuel == false) then
+            ensureFuel()
+        end
 
         -- Flag to determine whether digging has been tried yet. If it has
         -- then pause briefly before digging again to allow sand or gravel to

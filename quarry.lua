@@ -129,7 +129,7 @@ function ensureFuel()
         if (fuelLevel <= 1000) then
             writeMessage("Completely out of fuel! Returning to start", messageLevel.DEBUG)
             outofFuel = true;
-            returnToStartAndUnload(false);
+            returnToStart(false);
             -- Face forward
             turtleSetOrientation(direction.FORWARD)
             outofFuel = false;
@@ -151,18 +151,43 @@ function ensureInventorySpace()
 
         -- If the last inventory slot is full, then need to return to the start and empty
         if (turtle.getItemCount(lastEmptySlot) > 0) then
-
             -- Return to the starting point and empty the inventory, then go back to mining
-            returnToStartAndUnload(true)
+            useEnderChest()
         end
     end
+end
+
+-- ********************************************************************************** --
+-- Checks that the turtle has inventory space by checking for spare slots and returning
+-- to the starting point to empty out if it doesn't.
+--
+-- Takes the position required to move to in order to empty the turtle's inventory
+-- should it be full as arguments
+-- ********************************************************************************** --
+function useEnderChest()
+    local prevMiningState = currMiningState
+    currMiningState = miningState.EMPTYINVENTORY
+    -- First Position for Enderchest
+    turtle.select(1)
+    while not turtle.place() do
+        turtle.dig()
+    end
+    for i = 2, 16 do
+        turtle.select(i)
+        turtle.drop()
+    end
+    turtle.select(1)
+    turtle.dig()
+    turtle.select(2)
+    currentlySelectedSlot = 2
+    currMiningState = prevMiningState
 end
 
 -- ********************************************************************************** --
 -- Function to move to the starting point, call a function that is passed in
 -- and return to the same location (if required)
 -- ********************************************************************************** --
-function returnToStartAndUnload(returnBackToMiningPoint)
+function returnToStart(returnBackToMiningPoint)
 
     writeMessage("returnToStartAndUnload called", messageLevel.DEBUG)
     returningToStart = true
@@ -239,7 +264,6 @@ function returnToStartAndUnload(returnBackToMiningPoint)
     storedOrient = currOrient
 
     -- Store the current location and orientation so that it can be returned to
-    currMiningState = miningState.EMPTYINVENTORY
     writeMessage("last item count = "..turtle.getItemCount(lastEmptySlot), messageLevel.DEBUG)
 
     if ((turtle.getItemCount(lastEmptySlot) > 0) or (returnBackToMiningPoint == false)) then
@@ -313,23 +337,9 @@ function returnToStartAndUnload(returnBackToMiningPoint)
             writeMessage("Current height is greater than start height in returnToStartAndUnload", messageLevel.ERROR)
         end
 
-        -- Empty the inventory
-
-        local slotLoop = 1
-
         -- Face the chest
         turtleSetOrientation(direction.BACK)
 
-        -- Loop over each of the slots (except the 16th one which stores fuel)
-        while (slotLoop <= 16) do
-            turtle.select(slotLoop)
-            -- If this is one of the slots that contains a noise block, empty all blocks except
-            -- one
-            if (turtle.getItemCount(slotLoop) > 0) then
-                turtle.drop()
-            end
-            slotLoop = slotLoop + 1
-        end
 
         -- Select the 1st slot because sometimes when leaving the 15th or 16th slots selected it can result
         -- in that slot being immediately filled (resulting in the turtle returning to base again too soon)
@@ -1392,7 +1402,7 @@ function createQuarry()
     end
 
     -- Return to the start
-    returnToStartAndUnload(false)
+    returnToStart(false)
 
     -- Face forward
     turtleSetOrientation(direction.FORWARD)
@@ -1465,7 +1475,7 @@ function isResume()
                     if (resumeMiningState == miningState.EMPTYINVENTORY) then
                         -- Am mid way through an empty inventory cycle. Complete it before
                         -- starting the main Quarry function
-                        returnToStartAndUnload(true)
+                        useEnderChest()
                         resuming = true
 
                         -- Continue from the current position

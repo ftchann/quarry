@@ -1616,6 +1616,13 @@ if (paramsOK == true) then
     if (resuming == false) then
         determineNoiseBlocksCountCount()
     end
+    turtle.select(1)
+    local data = turtle.getItemDetail()
+    if data then
+        if (data.name ~= 'EnderChest:enderChest') then
+            writeMessage("No EnderChest", messageLevel.FATAL)
+        end
+    end
 
     if (false) then
         writeMessage("No noise blocks have been been added. Please place blocks that the turtle should not mine (e.g. Stone, Dirt, Gravel etc.) in the first few slots of the turtle\'s inventory. The first empty slot signifies the end of the noise blocks.", messageLevel.FATAL)
